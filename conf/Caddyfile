@@ -1,0 +1,6 @@
+ideasidus.dev {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+	}
+	redir https://ideasidus.notion.site
+}
