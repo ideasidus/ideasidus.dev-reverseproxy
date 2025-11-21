@@ -4,3 +4,17 @@ ideasidus.dev {
 	}
 	redir https://ideasidus.notion.site
 }
+
+isochrone.ideasidus.dev {
+	tls {
+		dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+	}
+
+	handle /api/v1* {
+		reverse_proxy backend-python-fastapi:8000
+	}
+
+	handle {
+		reverse_proxy frontend-vue3:80
+	}
+}
